@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="env" value="outside"/>
+ </properties>
  <tileset firstgid="1" name="ultimate" tilewidth="32" tileheight="32">
   <image source="tiles/ultimate.png" trans="ffffff" width="1024" height="2016"/>
  </tileset>
@@ -111,5 +114,16 @@
   <object x="1056" y="0" width="32" height="64"/>
   <object x="1120" y="0" width="32" height="64"/>
   <object x="1184" y="0" width="32" height="64"/>
+  <object x="321" y="339" width="287" height="12"/>
+ </objectgroup>
+ <objectgroup name="brown_house_door" width="100" height="100" visible="0">
+  <properties>
+   <property name="map" value="map4"/>
+   <property name="obj_name" value="brown_house_door"/>
+  </properties>
+  <object x="324" y="142" width="24" height="17"/>
+ </objectgroup>
+ <objectgroup name="spawn" width="100" height="100" visible="0">
+  <object x="320" y="224" width="32" height="32"/>
  </objectgroup>
 </map>

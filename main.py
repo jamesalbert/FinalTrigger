@@ -1,11 +1,14 @@
 import pygame
 
+from rpg.collision import coords_to_barrier, collhand
+#from rpg.scene import current_scene
 from rpg import (
     entity,
     utils,
     scene,
     collision,
-    popup
+    popup,
+    map
 )
 
 from rpg.config import (
@@ -20,37 +23,49 @@ from rpg.config import (
     allies,
     players,
     barriers,
-    pressed_keys
+    pressed_keys,
+    mainchar,
+    enemy,
+    doors
 )
 
-mainchar = entity.Player('sprites/player_sprite.png', 48, 64, screen)
-mainchar.walk('south')
 
-enemy = entity.Enemy('sprites/green_sprite.png', 48, 64, screen)
-enemy.walk('east')
-enemy.transform(200, 200)
+def change_scene(mapname, players, enemies, new_scene=scene.GeneralScene):
+    global current_scene
+    doors.empty()
+    barriers.empty()
+    collhand.clear_systems()
+    rmap = map.Map(screen, mapname)
+    current_scene = new_scene(screen, rmap,
+                              players, enemies)
+    find_bounds()
+    print barriers
+    collhand.add_system(mainchar, barriers,
+                        mainchar.stop, single=False)
+    collhand.add_system(mainchar, enemies, player_enemy_collision)
+    #current_scene.pressed_keys = []
 
-#allies.add(mainchar)
-players.add(mainchar)
-enemies.add(enemy)
-collisions = collision.CollisionHandler()
-
-
-'''
- get x, y, width, and height of all bounds defined
- in tiled and create collision boxes out of them
-'''
-objects = rmap.tmx.objects
-for o in objects:
-    if o.visible:
-        barrier = collision.Barrier(screen, o.x, o.y , o.width, o.height)
-        barriers.add(barrier)
-
-
-collisions.add_system(mainchar, barriers,
-                      mainchar.stop, single=False)
-current_scene = scene.MainScene(screen, rmap,
-                                players, enemies)
+def find_bounds():
+    global current_scene
+    print 'now in %s' % str(current_scene)
+    for e in current_scene.rmap.tmx:
+        obj_name = e.properties.get('obj_name')
+        #print dir(e)
+        #print e.properties
+        print e.name
+        if e.name == 'brown_house_door':
+            for e_child in e:
+                coords_to_barrier(e_child, change_scene, props=e.properties)
+        elif e.name == 'spawn':
+            #print e.properties
+            for spawn in e:
+                mainchar.transform(spawn.x, spawn.y)
+        elif e.name == 'exit':
+            #print e.properties
+            for ex in e:
+                coords_to_barrier(ex, change_scene, props=e.properties)
+        else:
+            coords_to_barrier(e, change_scene)
 
 
 def player_enemy_collision(mainchar, opponent):
@@ -60,19 +75,23 @@ def player_enemy_collision(mainchar, opponent):
     opponent.ready_for_battle()
     opponents.add(opponent)
     enemies.remove(opponent)
-    current_scene.close_scene()
-    current_scene = scene.BattleScene(screen, bmap,
-                                      players, opponents)
+    change_scene('map2', players, opponents, new_scene=scene.BattleScene)
+    #current_scene = scene.BattleScene(screen, bmap,
+    #                                  players, opponents)
     current_scene.commense_battle()
     mainchar.return_from_battle()
-    current_scene = scene.MainScene(screen, rmap,
-                                    players, enemies)
-    current_scene.pressed_keys = []
+    change_scene('map3', players, enemies, new_scene=scene.MainScene)
+    #current_scene = scene.MainScene(screen, rmap,
+    #                                players, enemies)
+    #current_scene.pressed_keys = []
 
 
-collisions.add_system(mainchar, enemies, player_enemy_collision)
+#collhand.add_system(mainchar, enemies, player_enemy_collision)
+
 def main():
     global current_scene
+    change_scene('map3', players, enemies, scene.MainScene)
+#    find_bounds()
     while True:
         '''
          render, update, and handle events within the current scene
@@ -80,7 +99,7 @@ def main():
         current_scene.render()
         current_scene.update()
         current_scene.handle_events(pygame.event.get())
-        collisions.detect_collisions()
+        collhand.detect_collisions()
         #update and fps
         pygame.display.flip()
         clock.tick(60)

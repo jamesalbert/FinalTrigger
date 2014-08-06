@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="env" value="house"/>
+ </properties>
+ <tileset firstgid="1" name="ultimate" tilewidth="32" tileheight="32">
+  <image source="tiles/ultimate.png" trans="ffffff" width="1024" height="2016"/>
+ </tileset>
+ <layer name="floor" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0TENADAMwLAiHH84A9EeOWwpCPJm5h3GzuULP/b8aPGjxY8WP1r8aPGjxY8WP1r8aPGjxY8WP1r8aPGjxQ8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADY+PZBnmQ==
+  </data>
+ </layer>
+ <layer name="misc" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt010KgVEQBuC5+D7787MNys8ycEFZBS4oe2AnrMKIUuT2dMrz1NvUuZw5b8TTvBOxyCwzm1e6bUQv088M2qCgbe5/l9lnTq+M8waTzDQzc49izk3EpXnPVe5+3X6/U8Y1d31r3vOQtzi23++U8dmDX5MyPnvwa1KGftRFP+qiH3XRj7roR10e/3+YGekHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwN+5A7urXnU=
+  </data>
+ </layer>
+ <layer name="tables" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt1DEKgDAMQNEsFRdvop7AI6ibJ/H+YMTd0VZ4D0LXwCeNiDi7AF70buRXFr2aokdb9ABaduQfNZTnpb4xW0w5c6m9Cbc1O2w5ux4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8IkLTP4Dog==
+  </data>
+ </layer>
+ <objectgroup name="spawn" width="100" height="100" visible="0">
+  <object x="96" y="256" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup name="barriers" width="100" height="100" visible="0">
+  <object x="32" y="64" height="320"/>
+  <object x="32" y="64" width="320"/>
+  <object x="352" y="64" height="320"/>
+  <object x="32" y="384" width="320"/>
+  <object x="224" y="256" width="32" height="32"/>
+  <object x="288" y="256" width="32" height="32"/>
+  <object x="224" y="288" width="96" height="64"/>
+  <object x="320" y="96" width="32" height="96"/>
+  <object x="160" y="64" width="64" height="64"/>
+  <object x="64" y="64" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup name="exit" width="100" height="100" visible="0">
+  <properties>
+   <property name="map" value="map3"/>
+  </properties>
+  <object x="64" y="384" width="64" height="32"/>
+  <object x="64" y="352" width="64" height="32"/>
+ </objectgroup>
+</map>
