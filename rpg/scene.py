@@ -2,7 +2,15 @@ __author__ = 'jbert'
 
 import pygame
 import sound
-from config import cont, pressed_keys
+from config import (
+    screen,
+    cont,
+    pressed_keys,
+    rmap,
+    players,
+    enemies
+)
+
 from popup import Dialog, Attack
 
 class Scene(object):
@@ -14,33 +22,17 @@ class Scene(object):
         self.entities = pygame.sprite.Group()
         self.entities.add(players)
         self.entities.add(enemies)
-        self.pressed_keys = pressed_keys
-
-    def render(self):
-        raise NotImplementedError
-
-    def update(self):
-        raise NotImplementedError
-
-    def handle_events(self, events):
-        raise NotImplementedError
-    def close_scene(self):
         self.pressed_keys = []
 
-
-class MainScene(Scene):
-    def __init__(self, screen, rmap, players, enemies):
-        super(MainScene, self).__init__(screen, rmap, players, enemies)
-        sound.SoundMixer('soundtracks/Wintry_Town_Loop.wav')
     def render(self):
         self.rmap.draw()
         self.entities.draw(self.screen)
-        #self.players.draw(self.screen)
-        #self.enemies.draw(self.screen)
+
     def update(self):
         for e in self.entities:
             e.refresh()
         pygame.display.flip()
+
     def handle_events(self, event_poll):
         for event in event_poll:
             if event.type == pygame.QUIT:
@@ -61,20 +53,24 @@ class MainScene(Scene):
                     for player in self.players:
                         cont.press(self.pressed_keys[0], player)
 
+    def close_scene(self):
+        self.pressed_keys = []
+
+
+class GeneralScene(Scene):
+    def __init__(self, screen, rmap, players, enemies):
+        super(GeneralScene, self).__init__(screen, rmap, players, enemies)
+        sound.SoundMixer('soundtracks/house.wav')
+
+class MainScene(Scene):
+    def __init__(self, screen, rmap, players, enemies):
+        super(MainScene, self).__init__(screen, rmap, players, enemies)
+        sound.SoundMixer('soundtracks/Wintry_Town_Loop.wav')
 
 class BattleScene(Scene):
     def __init__(self, screen, rmap, players, enemies):
         super(BattleScene, self).__init__(screen, rmap, players, enemies)
         sound.SoundMixer('soundtracks/battle.wav')
-    def render(self):
-        self.rmap.draw()
-        self.entities.draw(self.screen)
-    def update(self):
-        for player, enemy in zip(self.players,
-                                 self.enemies):
-            player.refresh()
-            enemy.refresh()
-        pygame.display.flip()
     def handle_events(self, event_poll):
         for event in event_poll:
             if event.type == pygame.QUIT:
@@ -103,7 +99,18 @@ class BattleScene(Scene):
                     bd.wait_for_continue()
                     fight_menu = Attack(self.screen, entity)
                     fight_menu.wait_for_continue()
-                    fight_menu.carry_out('hit', [x for x in self.entities if x in self.enemies][0])
+                    try:
+                        fight_menu.carry_out('hit', [x for x in self.entities if x in self.enemies][0])
+                    except:
+                        '''
+                        player attacked after enemy died. Happens when event.get()
+                        returns multiple true values for key presses
+                        '''
+                        pass
         for p in self.players:
             p.stop()
             p.controls_active = True
+
+
+#current_scene = MainScene(screen, rmap,
+#                          players, enemies)

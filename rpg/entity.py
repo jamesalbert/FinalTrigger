@@ -56,7 +56,7 @@ class Entity(Sprite):
     def update_bounds(self):
         '''
         self.rect.{x,y} are the coordinates of surface bounding
-        the character. This surface is used for collisions
+        the character. This surface is used for collhand
         and orientation.
         '''
         self.rect.x = self.coords['x'] + self.clip_width * foot_x_const
