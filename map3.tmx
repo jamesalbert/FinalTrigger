@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="ultimate" tilewidth="32" tileheight="32">
+  <image source="tiles/ultimate.png" trans="ffffff" width="1024" height="2016"/>
+ </tileset>
+ <layer name="bare_grass" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJAAAMBKGr9/0LDZZDwVVTVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/ATccJDY=
+  </data>
+ </layer>
+ <layer name="grass_overgrowth" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt1MENgCAQBEC0NvuvgkKMLz6oxMRwnvOYQAJ8doG6lFKBU9van5Obrvk6d3g+HeSj0zl5H+NV9r21uzOMZf9kv9zj0g2Z+Hdi0cF/6Boa70HGmY1mr6NY9AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwjh0jNuPI
+  </data>
+ </layer>
+ <layer name="sidewalk" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt1TEKgDAMBdDcf/EovaIIduqgkQzBvgcZm+F/2kasjnuqVO/bjT56GVGbX/W+3bgfveijF330cmU33/zMPJ3hmzdZZ/rynwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwL+cFg0m3Q==
+  </data>
+ </layer>
+ <layer name="structures" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0bENwjAQhlHLN0LYBDYhm8A+YRPYJNmEONVVpolc8Z50+pvrvlKAs6bIu0T/b6mlvGouY1wj7/ajx7s1+NRcxri3BnPk9qytwVZzGePRGjwjt+d7NIhcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+Cc7l2wPgQ==
+  </data>
+ </layer>
+ <layer name="windows" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0MENABAQAMHLNUgnNKJnCpCQiN/Me18bAQD/lYyoee7GRcO7tj53rwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGBrAhxnAhY=
+  </data>
+ </layer>
+ <layer name="doors" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0bEJgEAMQNHAFQ6gm+gmuonO4CTiJA5mGvtDEAXfg3QpQn4EcFdbIrry9hVc+mwx6PEZY7aYcrambn/V7lFz/nfJOSp77HoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwYydI/gTd
+  </data>
+ </layer>
+ <layer name="barrels" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0UEJACAABMF7aAaj2D+HZRR8GEHBGdgEmwD8odekrUbZcZcfb/EDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjgm43QZD
+  </data>
+ </layer>
+ <layer name="ladders" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0UENADAIADGS6UXKpMzjvhgg8GgVXHIRALBLnukCquvHKs8PAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAdh8onQGx
+  </data>
+ </layer>
+ <layer name="misc" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt1DEOgDAIBdDq2bz/KTyIcehgIqQo43sJQzswfAhjxM7tWx37802PLOPo763okWW5mr159Ln3P7K6+1kParK8563604Ma8wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICaC9IdLcA=
+  </data>
+ </layer>
+ <layer name="shop_accessories_in" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0bEJAAAIwDDB/3/2BR0EkWTs2ggAAAAA+CFz1tnlxy1+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9BWzKwAl
+  </data>
+ </layer>
+ <layer name="shop_accessories_in_2" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0aENACAQBMFX4GmISqD/Ml5gEShCyIw8dclGAAAAAMAfRtnvrd79wdL1eMrUAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4FgChccBWA==
+  </data>
+ </layer>
+ <layer name="shop" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0TEOQEAUBNCNDifBScRJcBJc2hYroaFbEe8l0/zqZyYEAAAA4CvKIoTqJnXx9of/0sS+25t09siqf+h7sEdWY+x7Sjk7brM9slpi32vK2XHb7AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHCxAx/sCGE=
+  </data>
+ </layer>
+ <layer name="shop_accessories_out" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztyrEJADAIAEFx/6mCg1kLaQWLu+7hIwAAAAAAdrycXfn/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4JIGiZsBiw==
+  </data>
+ </layer>
+ <layer name="graveyard" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0bEJACAQBEGTr85OLcWqTAXN/8UZuPxgWwMAAABgN+LcjOxX/+qX6ZFHj1r0qEWPWvSoRQ8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4DULZV4R3w==
+  </data>
+ </layer>
+ <layer name="gravestones" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0aENAEAIwEAM+4/Jj/EahyDB3JkO0AgAAAAAgLnKXu49LwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFZ9pWICxg==
+  </data>
+ </layer>
+ <layer name="castle" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt08EJwkAQBdC9pQ1LsY2oxDqSiKWkVgXn6FyEZQd8D8KHOS0//NbGuUyfnCNvkddpzHv+3Ra9r5GPyN3/gLa8d3D/8i32McQz6T2705d91GIftdhHLfZRi33UYh+1HEnv2Z2+Tknv2Z2+zknv2R0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB+9QKy7xT7
+  </data>
+ </layer>
+ <objectgroup name="house_barrier" width="100" height="100" visible="0">
+  <object x="256" y="64" width="64" height="128"/>
+  <object x="320" y="64" width="32" height="64"/>
+  <object x="352" y="64" width="96" height="128"/>
+  <object x="512" y="96" width="128" height="96"/>
+  <object x="640" y="64" height="32"/>
+  <object x="640" y="64" width="128"/>
+  <object x="768" y="64" height="128"/>
+  <object x="640" y="128" width="96" height="64"/>
+  <object x="320" y="448" width="96" height="32"/>
+  <object x="320" y="352" height="96"/>
+  <object x="608" y="352" height="128"/>
+  <object x="320" y="352" width="288"/>
+  <object x="512" y="448" width="96" height="32"/>
+  <object x="544" y="384" height="64"/>
+  <object x="384" y="384" height="64"/>
+  <object x="320" y="384" width="288"/>
+  <object x="0" y="352" width="160" height="32"/>
+  <object x="160" y="352" width="32" height="224"/>
+  <object x="96" y="416" width="32" height="32"/>
+  <object x="64" y="448" width="32" height="32"/>
+  <object x="32" y="416" width="32" height="32"/>
+  <object x="992" y="96" width="32" height="352"/>
+  <object x="1184" y="96" width="32" height="352"/>
+  <object x="992" y="0" width="32" height="64"/>
+  <object x="1056" y="0" width="32" height="64"/>
+  <object x="1120" y="0" width="32" height="64"/>
+  <object x="1184" y="0" width="32" height="64"/>
+ </objectgroup>
+</map>

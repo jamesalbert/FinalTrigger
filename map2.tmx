@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="grounds" tilewidth="32" tileheight="32">
+  <image source="tiles/dg_grounds32.gif" trans="ffffff" width="288" height="608"/>
+ </tileset>
+ <tileset firstgid="172" name="dungeon" tilewidth="32" tileheight="32">
+  <image source="tiles/dg_dungeon32.gif" trans="ffffff" width="288" height="320"/>
+ </tileset>
+ <tileset firstgid="262" name="monster" tilewidth="32" tileheight="32">
+  <image source="tiles/dg_monster132.gif" trans="ffffff" width="192" height="512"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt1DEOgCAUREFuwP0Lz+O1bCwsQEFCssVMshXdfwm1lFI7O+/13ldG29vNnj2OiY20pE2PLHpk0SOLHln0yDLaY3Z6/DNy05XpMUePLLv+q6/RpkcWPbLokUWPLDturcd/egAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsOIC6k53rw==
+  </data>
+ </layer>
+ <layer name="enemy" width="100" height="100" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztzkENAAAIBKDzY//IxnA6SEACAAAAXNe1PQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwZzGwAI
+  </data>
+ </layer>
+ <objectgroup name="battleable" width="100" height="100" visible="0">
+  <object x="513" y="325" width="30" height="26"/>
+ </objectgroup>
+</map>
